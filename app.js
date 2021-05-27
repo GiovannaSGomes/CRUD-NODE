@@ -1,9 +1,7 @@
 const express = require('express');
-const ProductRoute = require('./Routes/Product.route');
+const ItemRoute = require('./Routes/Item.route');
 const createErros = require('http-errors');
 const dotenv = require('dotenv').config();
-
-
 const app = express();
 
 app.use(express.json());
@@ -15,7 +13,7 @@ const PORT = process.env.PORT || 3000
 // initialize DB
 require('./initDB')();
 
-app.use('/products', ProductRoute);
+app.use('/items', ItemRoute);
 
 //Error handler
 app.use((req, res, next) => {
