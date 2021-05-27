@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 3000
 // initialize DB
 require('./initDB')();
 
+app.use(allowCrossDomain)
 app.use('/items', ItemRoute);
 
 //Error handler
