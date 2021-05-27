@@ -3,7 +3,9 @@ const ItemRoute = require('./Routes/Item.route');
 const createErros = require('http-errors');
 const dotenv = require('dotenv').config();
 const app = express();
-const cors = use(cors({
+const cors = require('cors')
+
+app.use(cors({
     origin: "*",
     methods: ['GET', 'POST']
 }))
