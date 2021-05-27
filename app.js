@@ -17,12 +17,12 @@ app.use('/items', ItemRoute);
 
 //Error handler
 app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Origin", "Origin, X-Requested-With, Content-Type, Accept")
     next(createErros(404, "Sorry, we could not find the page required!"));
 });
 
 app.use((err, req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header("Access-Control-Allow-Origin", "Origin, X-Requested-With, Content-Type, Accept")
     res.status(err.status || 500);
     res.send({
         error: {
