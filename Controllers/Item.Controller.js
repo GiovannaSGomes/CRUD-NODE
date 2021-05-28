@@ -48,25 +48,17 @@ module.exports = {
     //To update some item by id
     updateItem : async (req, res, next) => {
         try {
-            //const id = req.params.id;
-            //const update = req.body;
-            //const options = {new: true}
+            const id = req.body.id;
+            const update = req.body;
+            const options = {new: true}
     
-            //const result = await Item.findByIdAndUpdate(id, update, options);
-            
-            
-            //const dados = req.body;
-            //const find = await Item.find();
-
-            //res.send(result)
-            
-            console.log("Acessado");
-
-            //res.send(dados)
-            //console.log(dados);
+            const result = await Item.findOneAndUpdate(id, update, options);
+    
+            res.send(result)
             
         } catch (error) {
-            console.messsage(error.messsage);
+            console.log(error.messsage);
+            
         }
     },
 

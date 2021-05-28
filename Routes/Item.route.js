@@ -14,6 +14,7 @@ router.get('/:id', ItemController.findItemById);
 
 //Update by ID
 router.patch('/:id', ItemController.updateItem);
+//router.patch('/', ItemController.updateItem);
 
 //Delete by ID
 router.delete('/:id', ItemController.deleteItem);
